@@ -3,11 +3,10 @@ CSS Design Patterns
 
 Handy, time-saving Front-End Dev design patterns, abstractions and objects.
 
-`CSS
+```CSS
 /*  
     .nav
     -----------------------------------------------
-    
     Basic horizontal nav list object.
     Breaks nav items to vertical blocks at 25em for mobile
 
@@ -35,4 +34,4 @@ Handy, time-saving Front-End Dev design patterns, abstractions and objects.
         display: block;
     }
 }
-`
+```
