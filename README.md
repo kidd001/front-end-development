@@ -18,6 +18,7 @@ Use patterns to cut-down on how much CSS you need to write and to quicky prototy
     -----------------------------------------------
     Basic horizontal nav list object.
     Breaks nav items to vertical blocks at 25em for mobile
+    Assumes the element is a list
 
     <ul class='nav'>
         <li>Something</li>
@@ -27,7 +28,7 @@ Use patterns to cut-down on how much CSS you need to write and to quicky prototy
     SaSS: @extend .nav;
 */
 
-.nav { /* ul */
+.nav { /* ul, ol */
     margin: 0;
     padding-left: 0;
     overflow: hidden;
