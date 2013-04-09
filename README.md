@@ -35,8 +35,8 @@ Use patterns to cut-down on how much CSS you need to write and to quicky prototy
 }
 
 .nav li {
-        display: inline-block;
-        list-style: none;
+    display: inline-block;
+    list-style: none;
 }
 
 @media screen and (max-width: 25em) {
