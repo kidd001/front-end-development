@@ -45,8 +45,6 @@ Use patterns to cut-down on how much CSS you need to write and to quicky prototy
 }
 
 
-
-
 /*
     .media
     -----------------------------------------------
