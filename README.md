@@ -48,6 +48,8 @@ Use patterns to cut-down on how much CSS you need to write and to quicky prototy
 
 
 /*
+    .media
+    -----------------------------------------------
     The classic Media object from Nicole Sullivan:
     http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
     
@@ -82,6 +84,8 @@ Use patterns to cut-down on how much CSS you need to write and to quicky prototy
 
 
 /*
+    .split
+    -----------------------------------------------
     Splits text into left and right columns, as in a price list,
     ingredients list etc.
     
