@@ -31,7 +31,6 @@ Use patterns to cut-down on how much CSS you need to write and to quicky prototy
 .nav { /* ul, ol */
     margin: 0;
     padding-left: 0;
-    overflow: hidden;
 }
 
 .nav li {
