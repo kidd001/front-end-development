@@ -105,5 +105,27 @@ Use patterns to cut-down on how much CSS you need to write and to quicky prototy
         text-align: left;
         float: left;
     }
+    
+
+/*
+    .island
+    -----------------------------------------------
+    Give a block of content some padding and margin, 
+    and undo the bottom margin on the last element.
+
+    <div class='island'>
+        <h2>Wilson!</h2>
+        <p>You're my best friend. It's a shame you're a beach ball.</p>
+    </div>
+
+*/
+
+.island{
+    padding: 1.25em;
+    margin-top: 1.25em;
+}
+    .island > :last-child{
+        margin-top:0; /* Remove the margin from the first child of a boxed off area so that we don’t end up with compounded margin/padding spacings. */
+    }
 
 ```
