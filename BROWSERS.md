@@ -42,3 +42,26 @@ But this is fine:
 
 <p>*Leading cause of heart disease</p>
 ```
+
+#### CSS inherit #
+IE7 doesn't support `property:inherit`, meaning it only has a semi-cascading implementation of CSS. Go figure :) 
+
+```CSS
+
+.pig{
+	border-color: pink;
+}
+
+.thing{
+	border-color: inherit;
+}
+
+```
+```HTML
+<div class='pig'>
+	<!-- .thing won't get a pink border in IE7 -->
+	<div class='thing'></div>
+</div>
+
+```
+
