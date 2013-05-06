@@ -6,7 +6,7 @@ Title says it all.
 ## IE7 ##
 Has lots of awesome bugs. 
 
-#### Sibling selector #
+### Sibling selector #
 Sibling selector fails to match if an HTML comment sits between the adjoining elements.
 
 ```CSS
@@ -43,7 +43,7 @@ But this is fine:
 <p>*Leading cause of heart disease</p>
 ```
 
-#### CSS inherit #
+### CSS inherit #
 IE7 doesn't support `property:inherit`, meaning it only has a semi-cascading implementation of CSS. Go figure :) 
 
 ```CSS
