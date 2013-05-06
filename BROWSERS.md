@@ -3,10 +3,8 @@ Weird things that browsers do
 
 Title says it all.
 
-## Internet Explorer ##
+## IE7 ##
 Has lots of awesome bugs. 
-
-### IE7 ###
 
 #### Sibling selector #
 Sibling selector fails to match if an HTML comment sits between the adjoining elements.
