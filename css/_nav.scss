@@ -1,0 +1,29 @@
+/**
+ * .nav
+ * ----------------------------------------------------------------------------
+ * Basic horizontal nav list object.
+ * Breaks nav items to vertical blocks at 25em for mobile
+ * Assumes the element is a list
+ *
+    <ul class='nav'>
+        <li>Something</li>
+        <li>Something</li>
+    </ul>
+ *   
+ * SaSS: @extend .nav;
+ */
+.nav { /* ul, ol */
+    margin: 0;
+    padding-left: 0;
+}
+
+	.nav > li {
+	    display: inline-block;
+	    list-style: none;
+	}
+
+@media screen and (max-width: 25em) {
+    .nav > li {
+        display: block;
+    }
+}

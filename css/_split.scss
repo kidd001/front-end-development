@@ -1,0 +1,22 @@
+/**
+ * .split
+ * ----------------------------------------------------------------------------
+ * Splits text into left and right columns, as in a price list,
+ * ingredients list etc. 
+ * 
+    <dl class='split'>
+        <dt class='split__left'>Widgets</dt>
+        <dd>$5.00</dd>
+        <dt class='split__left'>Sprokets</dt>
+        <dd>$7.00</dd>
+    </dl>
+*/
+.split { /* div, dl, li, p */
+    text-align: right;
+    overflow: hidden;
+}
+
+    .split__left{ /* dt, span */
+        text-align: left;
+        float: left;
+    }

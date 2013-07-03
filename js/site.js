@@ -1,0 +1,43 @@
+/**
+ * Site JavaScript template.
+ * ------------------------------------------------------------------------
+ */
+var Site = (function(window, document) {
+	"use strict";
+
+	var site = {
+		init: function() {
+
+		}
+		/* Add your site's methods here */
+	};
+
+	/**
+	 * Return public methods that you want other objects to be able to access
+	 */
+	return {
+		init: function() {
+			site.init.call(site);
+		}
+	};
+})(window, document);
+
+/**
+ * Bind initialize methods
+ * ------------------------------------------------------------------------
+ */
+(function(window, document, siteObject){
+	if($) {
+		$(document).ready(function() {
+			siteObject.init();
+		});
+	} else if ("addEventListener" in window) {
+		window.addEventListener("load", function() {
+			siteObject.init();
+		});
+	} else {
+		window.onload = function() {
+			siteObject.init();
+		};
+	}
+})(window, document, Site);

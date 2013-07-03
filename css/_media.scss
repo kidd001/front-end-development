@@ -1,0 +1,35 @@
+/**
+ * .media
+ * ----------------------------------------------------------------------------
+ * The classic Media object from Nicole Sullivan:
+ * http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-
+ * hundreds-of-lines-of-code/
+ *
+ * Example:
+    
+    <div class='media'>
+        <div class='media__image'>
+            <img src='image.png' alt='An Image'>
+        </div>
+        <p class='media__body'>
+            The media text.
+        </p>
+    </div>
+ */
+.media, .media__body { /* div, li */
+    overflow: hidden;
+    *overflow:visible;
+    zoom:1;
+}
+    .media__image{
+        float:left;
+        margin-right: 0.5em;
+    }
+    
+    .media__image img{
+        display:block;
+    }
+
+    .media__body{
+         /* The container for your text */
+    }

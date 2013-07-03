@@ -1,8 +1,3 @@
-Weird things that browsers do
-===================
-
-Title says it all.
-
 ## IE7 ##
 Has lots of awesome bugs. 
 
