@@ -3,8 +3,8 @@
 Sharing code makes all our projects better. Here's where you do it.
 
 * A place to collect our [Browser quirks](browsers/)
-* A sample [Javascript](javascript/site.js) project
-* A basic [HTML](html/index.html) template
+* A sample [Javascript](boilerplate/site/assets/js/site.js) project
+* A basic [HTML](boilerplate/site/index.html) template
 * Handy [Twig](twig) snippets and macros
-* Our CSS boilerplate code
-
+* CSS tips, tricks and re-usable objects [here](css/)
+* Our [boilerplate](boilerplate/) code
