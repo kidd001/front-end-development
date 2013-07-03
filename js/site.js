@@ -9,7 +9,7 @@ var Site = (function(window, document) {
 		init: function() {
 
 		}
-		/* Add your site's methods here */
+		/* Add your site methods here */
 	};
 
 	/**
