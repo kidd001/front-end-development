@@ -1,7 +1,7 @@
 # Browser quirks library #
 Them browsers, they can do crazy things. If you solve an issue, or encounter a bug, record it here.
 
-# Modern Browsers
+## Modern Browsers
 Browsers which support `querySelectorAll`, `addEventListener` and `@media` rules
 * [Google Chrome](chrome.md)
 * [Mozilla Firefox](firefox.md)
@@ -13,6 +13,6 @@ Browsers which support `querySelectorAll`, `addEventListener` and `@media` rules
 * [Android Browsers](android.md)
 * [Mobile Safari](mobile-safari.md)
 
-# Legacy Browsers
+## Legacy Browsers
 *  [Internet Explorer 8](ie8.md)
 *  [Internet Explorer 7](ie7.md)
