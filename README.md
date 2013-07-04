@@ -8,3 +8,8 @@ Sharing code makes all our projects better. Here's where you do it.
 * Handy [Twig](twig) snippets and macros
 * CSS tips, tricks and re-usable objects [here](css/)
 * Our [boilerplate](boilerplate/) code
+* 
+
+## Good reads
+* [Encapsulation in CSS](http://alchemyindesign.com/notes/encapsulation-in-css.html)
+* [Respect the global CSS namespace](http://blog.kaelig.fr/post/44554267597/please-respect-the-global-css-namespace)
