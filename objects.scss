@@ -1,0 +1,1103 @@
+/**
+ * {{Project Name}} Stylesheet
+ * ----------------------------------------------------------------------------
+ * Authors:
+ *
+ *      {{ Project Author }}          | May 2013
+ *
+ * ----------------------------------------------------------------------------
+ * Supported platforms:
+ *
+ *      IE8+
+ *      Android 2.3+
+ *      Mobile Safari (iOS 4+)
+ *      Chrome, Firefox, Safari
+ *
+ * ----------------------------------------------------------------------------
+ * Notes:
+ *
+ *      Build this project using `[project-root]/tools/css.sh`.
+ *
+ *      This wraps config.rb, allows us to keep the SaSS config out of the
+ *      web-root, and extends our config.sh which maintains all paths for
+ *      our asset toolchain (sprites/uglifyJS etc)
+ *
+ *      Project documentation at http://wiki.springload.co.nz/project-name
+ *
+ * Structure:
+ *
+ *      1. Variables
+ *      2. Base HTML/Reset
+ *      3. Libraries
+ *      4. Objects
+ *      5. UI Elements
+ *      6. Page specific styles
+ *      7. Shame.css [http://csswizardry.com/2013/04/shame-css/]
+ *
+ *
+ * Code standards:
+ *
+ *      https://github.com/springload/code-standards
+ *
+ * ----------------------------------------------------------------------------
+ *
+ * Good luck and happy hunting!
+ *
+ */
+
+/**
+ * Spacing: she's a fickle mistress.
+ * -----------------------------------------------------------------------------
+ */
+$base-spacing-unit: 1.5em; // 24px
+
+$xxxm :     0.1em;
+$xxm :      $base-spacing-unit / 3;     // 8px
+$xm :       $base-spacing-unit / 1.5;   // 16px
+$m :        $base-spacing-unit;         // 24px
+$mx :       $base-spacing-unit * 1.5;   // 36px
+$mxx :      $base-spacing-unit * 2;     // 48px
+
+.m0     	{ margin-top: 0; }
+.m0--b 		{ margin-bottom: 0; }
+.xxxm       { margin-top: $xxxm; }
+.xxm        { margin-top: $xxm; }
+.xm         { margin-top: $xm; }
+.m          { margin-top: $m; }
+.mx         { margin-top: $mx; }
+.mxx        { margin-top: $mxx; }
+
+.xxm--b     { margin-bottom: $xxm; }
+.xm--b      { margin-bottom: $xm; }
+.m--b       { margin-bottom: $m; }
+.mx--b      { margin-bottom: $mx; }
+.mxx--b     { margin-bottom: $mxx; }
+
+.p0         { padding-top: 0 !important; }
+.p0--b      { padding-bottom: 0 !important; }
+.xxp 		{ padding-top: $xxm; }
+.xp 		{ padding-top: $xm; }
+.p 			{ padding-top: $m; }
+.px 		{ padding-top: $mx; }
+.pxx 		{ padding-top: $mxx; }
+
+/**
+ * Helpers
+ * -----------------------------------------------------------------------------
+ */
+
+/**
+ * A lightweight way of vendor-prefixing things:
+ *
+ * @include vendor(transition, opacity 0.3s ease-out, margin-top 5s linear);
+ */
+@mixin vendor($property, $value...){
+    -webkit-#{$property}:$value;
+       -moz-#{$property}:$value;
+        -ms-#{$property}:$value;
+         -o-#{$property}:$value;
+            #{$property}:$value;
+}
+
+@mixin placeholder($color) {
+    &::-webkit-input-placeholder { /* WebKit browsers */
+        color:    $color;
+    }
+    &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color:    $color;
+    }
+    &::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color:    $color;
+    }
+    &:-ms-input-placeholder { /* Internet Explorer 10+ */
+        color:    $color;
+    }
+}
+
+.inline-block{
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+.user-select-none{
+    @include vendor(user-select, none);
+}
+
+/**
+ * Since v22, Chrome makes fat sausage horrible web typography. Fix it with 
+ * these properties right here. Maybe consider scoping this to a class for
+ * chrome/mac osx only at some point?
+ */
+.fix-webkit-font-rendering{
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/**
+ * Place something before an element
+ * ----------------------------------------------------------------------------
+ */
+.prepend{
+	&:before{
+		content: attr(data-prepend);
+		display: inline-block;
+	}
+}
+
+/**
+ * Place something after an element
+ * ----------------------------------------------------------------------------
+ */
+.append{
+	&:after{
+		content: attr(data-append);
+		display: inline-block;
+	}
+}
+
+/**
+ * 
+ * Typography defaults
+ * -----------------------------------------------------------------------------
+ */
+$sansSerifStack: "helvetica", sans-serif;
+$serifStack: "georgia", serif;
+
+html,
+body {
+    color:$baseColor;
+    font-family: $sansSerifStack;
+}
+
+h1, .h1 {
+    @extend .m0--b;
+    font-family:$serifStack;
+    font-size: 2.25em;                      /* 36px */
+    line-height: 1;                         /* 36px */
+    margin-top: .666666667em;               /* 24px */
+}
+
+h2, .h2 {
+    @extend .m0--b;
+    font-family:$serifStack;
+    font-size: 1.875em;                     /* 30px */
+    line-height: 1.2;
+    margin-top: .8em;                       /* 24px */
+}
+
+h3, .h3 {
+    @extend .m0--b;
+    font-family:$serifStack;
+    font-size: 1.375em;                     /* 22px */
+    line-height: 1.2;
+    margin-top: 1.090909091em;              /* 24px */
+}
+
+h4, .h4 {
+    @extend .m0--b;
+    @extend .fix-webkit-font-rendering;
+    font-family:$serifStack;
+    font-size: 1.125em;                     /* 18px */         
+    line-height: 1.33333333;                /* 24px */
+    margin-top: 1.11111111em;               /* 20px */
+}
+
+h5, .h5 {
+    @extend .m0--b;
+    font-family:$serifStack;
+    font-size: 1em;                         /* 16px */
+    line-height: 1.2;
+    margin-top: .75em;                      /* 12px */
+}
+
+h6, .h6 {
+    @extend .m0--b;
+    font-family:$sansSerifStack;
+    font-size: .875em;                      /* 14px */
+    line-height: 1.2;
+    margin-top: .857142857em;               /* 12px */
+}
+
+/**
+ * Paragraph styles
+ * ----------------------------------------------------------------------------
+ */
+p, .para {
+    @extend .m0--b;
+    font-size: .875em;                      /* 14px */
+    line-height: 1.785714286em;             /* 25px */
+    margin-top: .857142857em;               /* 12px */
+}
+
+.medium{
+    font-size: .875em;                      /* 14px */
+}
+
+.intro { 
+    font-size: 1.125em;                     /* 18px */
+}
+
+.small { 
+    font-size: .8125em;                     /* 14px */
+}
+
+.tiny {
+    font-size: .75em;                       /* 12px */
+}
+
+.weak {
+    font-weight: normal;
+}
+
+/**
+ * Typographic relationships (nawww, aren't they so good together?)
+ * ----------------------------------------------------------------------------
+ */
+h4 + h6,
+h4 + p,
+h5 + p {
+    margin-top: .285714286em;               /* 4px @ 14px */
+}
+
+p + p{
+    margin-top: .571428571em;               /* 8px @ 14px */               
+}
+
+/**
+ * Typography helpers
+ * ----------------------------------------------------------------------------
+ */
+.sans {
+  	font-family: $sansSerifStack;
+}
+
+.serif {
+	font-family: $serifStack;
+}
+
+/**
+ * Links
+ * ----------------------------------------------------------------------------
+ */
+
+a {
+	// something for links
+}
+
+/**
+ * List styles
+ * ----------------------------------------------------------------------------
+ */
+.list--unstyled {
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+}
+
+	.list--unstyled > li {
+        list-style: none;
+        margin-left: 0;
+    }
+
+.list--inline {
+	@extend .clearfix;
+    @extend .list--unstyled;
+}
+
+	.list--inline > li {
+		@extend .inline-block;
+	}
+
+/**
+ * Generic blocks
+ * ----------------------------------------------------------------------------
+ <div class='block block--bleed block--mobile'>
+	Some content.
+ </div>
+ */
+.block {
+	margin-top: $base-spacing-unit;
+    padding: $base-spacing-unit $base-spacing-unit * 2;
+}
+
+    .block > :first-child{
+        margin-top: 0;
+    }
+
+.block--xl {
+    padding: $base-spacing-unit * 1.5 $base-spacing-unit * 3;
+}
+
+.block--xxl {
+    padding: $base-spacing-unit * 2 $base-spacing-unit * 4;
+}
+
+.block--xxxl {
+    padding: $base-spacing-unit * 2.5 $base-spacing-unit * 5;
+}
+
+.block--xs {
+    padding: $base-spacing-unit / 1.5 $base-spacing-unit / 2;
+}
+
+.block--xxs {
+    padding: $base-spacing-unit / 2 $base-spacing-unit / 4;
+}
+
+.block--tight {
+	padding-top: $base-spacing-unit / 2;
+    padding-bottom: $base-spacing-unit / 2;
+}
+
+.block--bleed {
+	padding: 0;
+}
+
+    .block--bleed__padding {
+        padding: $base-spacing-unit $base-spacing-unit * 2;
+    }
+
+.block--mobile {
+	@include media(mobile) {
+		padding: 1em;
+	}
+}
+
+/**
+ * CSS Arrows
+ * ----------------------------------------------------------------------------
+ */
+
+
+/**
+ * Float an image to the left, with a clearfixed block of content to the right.
+ * ----------------------------------------------------------------------------
+ <div class='media'>
+	<img src='/some/image.png' class='media__image'>
+	<div class='media__body'>
+       The text!
+	</div>
+ </div>
+ */
+.media {
+	@extend .clearfix;
+	margin-top: $base-spacing-unit;
+}
+
+	.media__image{
+		float: left;
+	}
+
+	.media__body{
+		@extend .overflow-hidden;
+	}	
+
+.media--rev {
+	@extend .clearfix;
+	margin-top: $base-spacing-unit;
+}
+
+	.media--rev > .media__image{
+		float: right;
+	}
+
+	.media--rev > .media__body{
+		@extend .overflow-hidden;
+	}	
+
+/**
+ * Clearfix
+ * -----------------------------------------------------------------------------
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    content editable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix, .cf{
+	&:before,
+	&:after {
+	    content: " "; /* 1 */
+	    display: table; /* 2 */
+	}
+
+	&:after {
+	    clear: both;
+	}
+	
+	/**
+	 * For IE 6/7 only
+	 * Include this rule to trigger hasLayout and contain floats.
+	 */
+	*zoom: 1;
+}
+
+/**
+ * Inline block grid
+ * -----------------------------------------------------------------------------
+ *
+ * [1] Sets the child elements to take up full justified width of the parent
+ * [2] Overcomes an issue where the :after element blows out the bottom.
+ * [3] A fix for Internet Explorer 8/9
+ * 
+ */
+.grid {
+    text-align: justify;                /* [1] */
+    font-size: 0;                       /* [2] */
+    text-justify: distribute-all-lines; /* [3] */
+}
+
+	.grid > *{
+	    @extend .grid__item;
+	}
+
+    .grid__item{
+        @extend %inline-block;
+        font-size: medium;
+        text-align: left;
+        vertical-align: top;
+    }
+
+    .grid:after,
+    .grid__break {
+        @extend %inline-block;
+        content: '';
+        height: 0;
+    }
+/**
+ * Vertical align these grid items in the middle!
+ */
+.grid--middle > .grid__item{
+    vertical-align: middle;
+}
+
+    .g--1-1{
+        width: 100%;
+    }
+    .g--1-2 {
+        width: 50%;
+    }
+    .g--1-4 {
+        width: 25%;
+    }
+    .g--3-4 {
+        width: 75%;
+    }
+
+    .g--9-10{
+        width: 80%;
+    }
+    .g--1-10{
+        width: 20%;
+    }
+
+@media only screen and (max-width: 30em) {
+    .g-m--1-1{
+        width: 100%;
+    }
+    .g-m--1-2{
+        width: 50%;
+    }
+    .g-m--9-10{
+        width: 90%;
+    }
+    .g-m--1-10{
+        width: 10%;
+    }
+    .g-m--8-10{
+        width: 80%;
+    }
+    .g-m--2-10{
+        width: 20%;
+    }
+}
+
+/**
+ * Icons
+ * -----------------------------------------------------------------------------
+ <a class='' href='#'>
+ 	<i class='i s_icons_icon_name'></i>
+ 	A link!
+ </a>
+ */
+.i {
+    @extend .inline-block;
+    vertical-align: middle;
+    font-style: normal;
+}
+
+/**
+ * Icon adjacent to a block of text
+ * -----------------------------------------------------------------------------
+ <a class='icon-text' href='#'>
+    <i class='i s_icons_icon_name'></i>
+    <span class='icon-text__label'></span>
+    A link!
+ </a>
+ */
+.icon-text{
+    @extend %inline-block;
+    vertical-align: middle;
+}
+
+    .icon-text > .i {
+        vertical-align: middle;
+        margin-right: $baseSpacingUnit / 4;
+    }
+    
+    .icon-text > .icon-text__label {
+        @extend .inline-block;
+        vertical-align: middle;
+    }
+
+
+/**
+ * Buttons
+ * -----------------------------------------------------------------------------
+ *
+ * 1. Allow us to better style box model properties.
+ * 2. Line different sized buttons up a little nicer.
+ * 3. Stop buttons wrapping and looking broken.
+ * 4. Make buttons inherit font styles.
+ * 5. Force all elements using buttons to appear clickable.
+ * 6. Normalise box model styles.
+ * 7. If the button’s text is 1em, and the button is (2.5 * font-size) tall, then
+ *    there is 1em of space above and below that text. We therefore apply 1em
+ *    of space to the left and right, as padding, to keep consistent spacing.
+ * 8. Basic cosmetics for default buttons. Change or override at will.
+ * 9. Don’t allow buttons to have underlines; it kinda ruins the illusion.
+ */
+.btn{
+    @extend .inline-block;                          /* [1] */
+    @extend .user-select-none;
+    vertical-align: middle;                         /* [2] */
+    white-space: nowrap;                            /* [3] */
+    font-family: inherit;                           /* [4] */
+    cursor: pointer;                                /* [5] */
+    margin: inherit 0 0 0;                          /* [6] */
+    padding-top: 0;                                 /* [6] */
+    padding-bottom: 0;                              /* [6] */
+    line-height: 2.5;                               /* [7] */
+    padding-right: $base-spacing-unit;              /* [7] */
+    padding-left: $base-spacing-unit;               /* [7] */
+    border-width: 1px;
+    border-color: transparent;
+    border-style: solid;
+    @include vendor(border-radius, $base-spacing-unit/4);
+
+    &,
+    &:hover{
+        text-decoration:none;   /* [9] */
+    }
+
+    &:active,
+    &:focus{
+        outline:none;
+    }
+}
+
+/**
+ * Button modifiers
+ * ----------------------------------------------------------------------------
+ * E.g:
+    <a class='btn btn--large'>
+        My big button
+    </a>
+ * Or,
+    <a class='btn btn--small btn--soft'>
+        My small rounded button
+    </a>
+ */
+.btn--large,
+.btn--icon-large,
+.btn--icon-large--rev,
+.btn--icon-only--large {
+    line-height: 3.5;         
+}
+
+.btn--large {
+    padding-right: $base-spacing-unit * 2;          
+    padding-left: $base-spacing-unit * 2;  
+}
+
+.btn--small,
+.btn--icon-small,
+.btn--icon-small--rev,
+.btn--icon-only--small {
+    line-height: 2;   
+}
+
+.btn--small{
+    padding-right: $base-spacing-unit / 2;          
+    padding-left: $base-spacing-unit / 2;  
+}
+
+/**
+ * Pill type buttons with (rounded) ends
+ * ----------------------------------------------------------------------------
+ */
+.btn--soft {
+    @include vendor(border-radius, 200px);
+}
+
+.btn--hard {
+    @include vendor(border-radius, 0);
+}
+
+
+/**
+ * Block buttons stretch to the full width of their parent (handy!)
+ */
+.btn--block{
+    display: block;
+    text-align: center;
+}
+
+/**
+ * Make a button behave like a block at mobile only (also handy)
+ */
+@media only screen and (max-width:37.5em) {
+    .btn--block-mobile{
+        text-align: center;
+        display: block;
+    }
+}
+
+/**
+ * Submit buttons
+ * ----------------------------------------------------------------------------
+ * FireFox doesn't like line-heights on submit buttons. Stick a class on submit
+ * buttons and make sure the padding's the same as your default button :)
+ */
+.btn--submit{
+    line-height: 1;
+    padding-top: $base-spacing-unit / 2;
+    padding-bottom: $base-spacing-unit / 2;
+}
+
+.btn--submit-large{
+    line-height: 1;
+    padding-top: $base-spacing-unit;
+    padding-bottom: $base-spacing-unit;
+}
+
+.btn--submit-small{
+    line-height: 1;
+    padding-top: $base-spacing-unit / 4;
+    padding-bottom: $base-spacing-unit / 4;
+}
+
+/**
+ * Buttons with icons
+ * ----------------------------------------------------------------------------
+ * E.g:
+    <a class='btn btn--icon'>
+        <i class='i sprite_icon_edit'></i>
+        My big button
+    </a>
+ * Or,
+    <a class='btn btn--icon-large--rev'>
+        My small rounded button
+        <i class='i sprite_icon_close'></i>
+    </a>
+ */
+.btn--icon-only,
+.btn--icon-only--small,
+.btn--icon-only--large {
+    text-align: center;
+    min-width: 1em;
+}
+.btn--icon-only {
+    padding-left: $base-spacing-unit / 1.6;
+    padding-right: $base-spacing-unit / 1.6;
+}
+
+.btn--icon-only--small {
+    padding-left: $base-spacing-unit / 2.5;
+    padding-right: $base-spacing-unit / 2.5;
+}
+
+.btn--icon-only--large {
+    padding-left: $base-spacing-unit / .9;
+    padding-right: $base-spacing-unit / .9;
+}
+
+
+.btn--icon {
+    padding-left: $base-spacing-unit/2;
+    & > .i {
+        margin-right: $base-spacing-unit / 2;
+    } 
+}
+
+.btn--icon--rev {
+    padding-right: $base-spacing-unit/2;
+    & > .i {
+        margin-left: $base-spacing-unit / 2;
+    } 
+}
+
+.btn--icon-large{
+    padding-left: $base-spacing-unit;
+    padding-right: $base-spacing-unit * 2;
+    & > .i {
+        margin-right: $base-spacing-unit / 2;
+    } 
+}
+
+.btn--icon-large--rev{
+    padding-left: $base-spacing-unit * 2;
+    padding-right: $base-spacing-unit;
+    & > .i {
+        margin-left: $base-spacing-unit / 2;
+    } 
+}
+
+.btn--icon-small{
+    padding-left: $base-spacing-unit / 3;
+    padding-right: $base-spacing-unit / 2; 
+    & > .i {
+        margin-right: $base-spacing-unit / 4;
+    }
+}
+
+.btn--icon-small--rev{
+    padding-left: $base-spacing-unit / 2;
+    padding-right: $base-spacing-unit / 4;
+    & > .i {
+        margin-left: $base-spacing-unit / 2;
+    }
+}
+
+/**
+ * Button types
+ * ----------------------------------------------------------------------------
+ * E.g:
+    <a class='btn btn-primary'>
+        My awesome button
+    </a> 
+ */
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-positive:hover,
+.btn-negative:hover {
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: #3CBE8A;
+    color: #fff;
+    
+    &:hover {
+        background-color: darken(#3CBE8A, 7%);
+    }
+}
+
+.btn-secondary {
+    background-color: #999;
+    color: #fff;
+
+    &:hover {
+        background-color: #777;
+    }
+}
+
+.btn-tertiary {
+    background-color: #ddd;
+    color: #444;
+
+    &:hover {
+        background-color: #ccc;
+        color: #333;
+    }
+}
+
+.btn-positive {
+    background-color: #3977B1;
+    color: #fff;
+    &:hover {
+        background-color: darken(#3977B1, 7%);
+    }
+}
+
+.btn-negative {
+    background-color: #eb3930;
+    color: #fff;
+    &:hover {
+        background-color: #d8281f;
+    }
+}
+/**
+ * A common active state makes us look pro as, bro!
+ */
+.btn:active {
+    background-color: #333;
+    color: #fff;
+}
+
+/**
+ * ----------------------------------------------------------------------------
+ * Button behaviors
+ * ----------------------------------------------------------------------------
+ */
+
+/**
+ * Simple bounces
+ * ----------------------------------------------------------------------------
+ */
+.btn--bounce,
+.btn--bob{
+    position: relative;
+    @include vendor(transition, bottom 100ms ease-out);
+}
+
+    .btn--bounce:active {
+        bottom: -2px;
+    }
+
+    .btn--bob:active {
+        bottom: -1px;
+    }
+
+/**
+ * Bounce the icon to a side
+ */
+.btn--bounce-icon--right .i,
+.btn--bounce-icon--left .i,
+.btn--bounce-icon--bottom .i,
+.btn--bounce-icon--top .i {
+    position: relative;
+    @include vendor(transition-timing-function, cubic-bezier(0.165, 0.840, 0.440, 1.000));
+    @include vendor(transition-duration, 300ms);
+}
+
+    .btn--bounce-icon--right:hover .i {
+        @include vendor(transition-property, left);
+        left: .3125em;
+    }
+
+    .btn--bounce-icon--left:hover .i {
+        @include vendor(transition-property, right);
+        right: .3125em;
+    }
+
+    .btn--bounce-icon--bottom:hover .i {
+        @include vendor(transition-property, top);
+        top: .3125em;
+    }
+
+    .btn--bounce-icon--top:hover .i {
+        @include vendor(transition-property, bottom);
+        bottom: .3125em;
+    }
+
+/**
+ * Inset buttons on block level elements
+ * ----------------------------------------------------------------------------
+ */
+.btn--inset {
+    position: relative;
+
+}
+    .btn--inset:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        visibility: hidden;
+        @include vendor(transition, border-width 100ms ease-out, visibility 100ms);
+        content: " ";
+        display: block;
+        border-width: 0;
+        border-color: inherit;
+        border-style: solid;
+    }
+    .btn--inset:hover:after {
+        border-width: 4px;
+        visibility: visible;
+    }
+    .btn--inset-primary:after {
+        border-color: #3977B1;
+    }
+    .btn--inset-secondary:after {
+        border-color: #eb3930;
+    }
+    .btn--inset-large:hover:after {
+        border-width: 8px;
+    }
+    .btn--inset-small:hover:after {
+        border-width: 1px;
+    }
+
+/**
+ * Buttons that show a loading indicator when clicked
+ * ----------------------------------------------------------------------------
+ */
+.btn--spinner {
+    position: relative;
+    cursor: default;
+}
+
+    .btn--spinner .btn--label {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .btn--spinner:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        content: url('an/image.png');
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    .btn--spinner--text:after {
+        content: attr(data-btn-loading-indicator);
+    }
+
+
+/**
+ * Fancy select boxes
+ * -----------------------------------------------------------------------------
+ * 
+    <div class="field_select" data-select>
+        <div data-select-label="SelectID" class="field_select__value field field_text ">Nope</div>
+            <select class="field_select__input" id="SelectID" name="SelectID">
+                <option value="0" selected="">Nope</option>
+                <option value="1">Yep</option>
+            </select>
+        <div class="field_select__affordance">
+            <i class="i s_preapproval_select_normal"></i>
+        </div>
+    </div>
+ */
+.field_select {
+    @extend %relative;
+    @extend %field_metrics;
+    cursor: pointer;
+}
+
+    .field_select:hover {
+        .field_select__value {
+            background-color: $fieldBackgroundColorHover;
+            border-bottom-color: $fieldBorderColorHover;
+        }
+        .field_select__affordance .i {
+            @extend .s_preapproval_select_hover;
+        }
+    }
+
+    .field_select__input{
+        width: 100%;
+    }
+
+    .js .field_select__input {
+        @extend %absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        @include opacity(0);
+        -webkit-appearance: menulist-button;
+        display: block;
+        z-index: 2;
+        cursor: pointer;
+    }
+
+    .field_select__affordance,
+    .field_select__affordance--mobile{
+        @extend %absolute;
+        right: .5em;
+        top: 50%;
+        margin-top: -.5em;
+        line-height: 1;
+    }
+
+    .field_select__affordance{
+        @include media(mobile-only) {
+            display: none;
+        }
+    }
+
+    .field_select__affordance--mobile{
+        display: none;
+        @include media(mobile-only) {
+            display: block;
+        }
+    }
+
+    .no-js .field_select__value,
+    .no-js .field_select__affordance,
+    .no-js .field_select_affordance--mobile{
+        display: none;
+    }
+
+
+/**
+ * Fancy checkboxes
+ * -----------------------------------------------------------------------------
+ * 
+    <div class="icon_text">
+        <div class="i field_checkbox" data-checkbox>
+            <i class="field_checkbox__fancy"></i>
+            <input type="checkbox" id="CheckboxID" name="CheckboxID" value="1">
+            <label class="icon_text__label field_checkbox__label" for="CheckboxID">We consent to a credit check</label>
+        </div>
+    </div>
+ */
+
+.field_checkbox{
+    @extend %relative;
+
+    line-height: 1;
+
+    & > input{
+        margin: 0;
+    }
+
+    .js & > input {
+        @extend %absolute;
+        top: 0;
+        left: 0;
+
+        /**
+         * IE8 refuses to fire events on a hidden checkbox. Use opacity instead
+         */
+        @include opacity(0);
+    }
+}
+
+    .field_checkbox__fancy {
+        @extend %relative;
+        @extend .s_preapproval_checkbox_unchecked;
+
+        display: inline-block;
+        vertical-align: middle;
+        z-index: 1;
+        top: 0;
+        left: 0;
+
+        .no-js & {
+            display: none;
+        }
+        .field_checkbox--checked & {
+            @extend .s_preapproval_checkbox_checked;
+        }
+    }
+
+    .field_checkbox,
+    .field_checkbox__label{
+        cursor: pointer;
+    }
