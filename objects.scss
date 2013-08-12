@@ -99,6 +99,29 @@ $mxx :      $base-spacing-unit * 2;     // 48px
             #{$property}:$value;
 }
 
+@mixin media($breakpoint) {
+    @if $breakpoint == "mobile-only" {
+        @media only screen and (max-width: 30em) {
+            @content;
+        }
+    } @else if $breakpoint == "mobile" {
+        @media only screen and (max-width: 30em) {
+           @content;
+        }  
+    } @else if $breakpoint == "skinny-down" {
+        @media only screen and (max-width: 56em) {
+           @content;
+        }  
+    }
+}
+
+@mixin opacity($value) {
+    $ieOpacity: 100 * $value;
+    opacity: $value;
+    filter: alpha(opacity=#{$ieOpacity});
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{50})";
+}
+
 @mixin placeholder($color) {
     &::-webkit-input-placeholder { /* WebKit browsers */
         color:    $color;
@@ -126,6 +149,14 @@ $mxx :      $base-spacing-unit * 2;     // 48px
 
 .user-select-none{
     @include vendor(user-select, none);
+}
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
 }
 
 /**
@@ -170,7 +201,7 @@ $serifStack: "georgia", serif;
 
 html,
 body {
-    color:$baseColor;
+    color: #333;
     font-family: $sansSerifStack;
 }
 
@@ -459,7 +490,7 @@ a {
 	}
 
     .grid__item{
-        @extend %inline-block;
+        @extend .inline-block;
         font-size: medium;
         text-align: left;
         vertical-align: top;
@@ -467,7 +498,7 @@ a {
 
     .grid:after,
     .grid__break {
-        @extend %inline-block;
+        @extend .inline-block;
         content: '';
         height: 0;
     }
@@ -543,13 +574,13 @@ a {
  </a>
  */
 .icon-text{
-    @extend %inline-block;
+    @extend .inline-block;
     vertical-align: middle;
 }
 
     .icon-text > .i {
         vertical-align: middle;
-        margin-right: $baseSpacingUnit / 4;
+        margin-right: $base-spacing-unit / 4;
     }
     
     .icon-text > .icon-text__label {
@@ -983,18 +1014,16 @@ a {
     </div>
  */
 .field_select {
-    @extend %relative;
-    @extend %field_metrics;
+    @extend .relative;
     cursor: pointer;
 }
 
     .field_select:hover {
         .field_select__value {
-            background-color: $fieldBackgroundColorHover;
-            border-bottom-color: $fieldBorderColorHover;
+            background-color: #eee;
+            border-bottom-color: #ddd;
         }
         .field_select__affordance .i {
-            @extend .s_preapproval_select_hover;
         }
     }
 
@@ -1003,7 +1032,7 @@ a {
     }
 
     .js .field_select__input {
-        @extend %absolute;
+        @extend .absolute;
         top: 0;
         left: 0;
         right: 0;
@@ -1018,7 +1047,7 @@ a {
 
     .field_select__affordance,
     .field_select__affordance--mobile{
-        @extend %absolute;
+        @extend .absolute;
         right: .5em;
         top: 50%;
         margin-top: -.5em;
@@ -1059,7 +1088,7 @@ a {
  */
 
 .field_checkbox{
-    @extend %relative;
+    @extend .relative;
 
     line-height: 1;
 
@@ -1068,7 +1097,7 @@ a {
     }
 
     .js & > input {
-        @extend %absolute;
+        @extend .absolute;
         top: 0;
         left: 0;
 
@@ -1080,8 +1109,8 @@ a {
 }
 
     .field_checkbox__fancy {
-        @extend %relative;
-        @extend .s_preapproval_checkbox_unchecked;
+        @extend .relative;
+        // add your icon here
 
         display: inline-block;
         vertical-align: middle;
@@ -1093,7 +1122,7 @@ a {
             display: none;
         }
         .field_checkbox--checked & {
-            @extend .s_preapproval_checkbox_checked;
+            // add your icon here
         }
     }
 
