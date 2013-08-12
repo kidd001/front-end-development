@@ -27,7 +27,7 @@ var Site = (function(window, document) {
  * ------------------------------------------------------------------------
  */
 (function(window, document, siteObject){
-	if($) {
+	if(window.jQuery || window.Zepto) {
 		$(document).ready(function() {
 			siteObject.init();
 		});
