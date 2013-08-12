@@ -49,64 +49,84 @@
  * -----------------------------------------------------------------------------
  */
 .m0 {
-  margin-top: 0; }
+  margin-top: 0;
+}
 
 .m0--b, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, .para {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+}
 
 .xxxm {
-  margin-top: 0.1em; }
+  margin-top: 0.1em;
+}
 
 .xxm {
-  margin-top: 0.5em; }
+  margin-top: 0.5em;
+}
 
 .xm {
-  margin-top: 1em; }
+  margin-top: 1em;
+}
 
 .m {
-  margin-top: 1.5em; }
+  margin-top: 1.5em;
+}
 
 .mx {
-  margin-top: 2.25em; }
+  margin-top: 2.25em;
+}
 
 .mxx {
-  margin-top: 3em; }
+  margin-top: 3em;
+}
 
 .xxm--b {
-  margin-bottom: 0.5em; }
+  margin-bottom: 0.5em;
+}
 
 .xm--b {
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+}
 
 .m--b {
-  margin-bottom: 1.5em; }
+  margin-bottom: 1.5em;
+}
 
 .mx--b {
-  margin-bottom: 2.25em; }
+  margin-bottom: 2.25em;
+}
 
 .mxx--b {
-  margin-bottom: 3em; }
+  margin-bottom: 3em;
+}
 
 .p0 {
-  padding-top: 0 !important; }
+  padding-top: 0 !important;
+}
 
 .p0--b {
-  padding-bottom: 0 !important; }
+  padding-bottom: 0 !important;
+}
 
 .xxp {
-  padding-top: 0.5em; }
+  padding-top: 0.5em;
+}
 
 .xp {
-  padding-top: 1em; }
+  padding-top: 1em;
+}
 
 .p {
-  padding-top: 1.5em; }
+  padding-top: 1.5em;
+}
 
 .px {
-  padding-top: 2.25em; }
+  padding-top: 2.25em;
+}
 
 .pxx {
-  padding-top: 3em; }
+  padding-top: 3em;
+}
 
 /**
  * Helpers
@@ -121,24 +141,29 @@
 .grid__break, .i, .icon-text, .icon-text > .icon-text__label, .btn {
   display: inline-block;
   *display: inline;
-  *zoom: 1; }
+  *zoom: 1;
+}
 
 .overflow-hidden, .media__body, .media--rev > .media__body {
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 .user-select-none, .btn {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   -o-user-select: none;
-  user-select: none; }
+  user-select: none;
+}
 
 .absolute, .js .field_select__input, .field_select__affordance,
 .field_select__affordance--mobile, .js .field_checkbox > input {
-  position: absolute; }
+  position: absolute;
+}
 
 .relative, .field_select, .field_checkbox, .field_checkbox__fancy {
-  position: relative; }
+  position: relative;
+}
 
 /**
  * Since v22, Chrome makes fat sausage horrible web typography. Fix it with 
@@ -147,7 +172,8 @@
  */
 .fix-webkit-font-rendering, h4, .h4 {
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility; }
+  text-rendering: optimizeLegibility;
+}
 
 /**
  * Place something before an element
@@ -155,7 +181,8 @@
  */
 .prepend:before {
   content: attr(data-prepend);
-  display: inline-block; }
+  display: inline-block;
+}
 
 /**
  * Place something after an element
@@ -163,7 +190,8 @@
  */
 .append:after {
   content: attr(data-append);
-  display: inline-block; }
+  display: inline-block;
+}
 
 /**
  * 
@@ -173,7 +201,8 @@
 html,
 body {
   color: #333;
-  font-family: "helvetica", sans-serif; }
+  font-family: "helvetica", sans-serif;
+}
 
 h1, .h1 {
   font-family: "georgia", serif;
@@ -182,7 +211,8 @@ h1, .h1 {
   line-height: 1;
   /* 36px */
   margin-top: .666666667em;
-  /* 24px */ }
+  /* 24px */
+}
 
 h2, .h2 {
   font-family: "georgia", serif;
@@ -190,7 +220,8 @@ h2, .h2 {
   /* 30px */
   line-height: 1.2;
   margin-top: .8em;
-  /* 24px */ }
+  /* 24px */
+}
 
 h3, .h3 {
   font-family: "georgia", serif;
@@ -198,7 +229,8 @@ h3, .h3 {
   /* 22px */
   line-height: 1.2;
   margin-top: 1.090909091em;
-  /* 24px */ }
+  /* 24px */
+}
 
 h4, .h4 {
   font-family: "georgia", serif;
@@ -207,7 +239,8 @@ h4, .h4 {
   line-height: 1.33333333;
   /* 24px */
   margin-top: 1.11111111em;
-  /* 20px */ }
+  /* 20px */
+}
 
 h5, .h5 {
   font-family: "georgia", serif;
@@ -215,7 +248,8 @@ h5, .h5 {
   /* 16px */
   line-height: 1.2;
   margin-top: .75em;
-  /* 12px */ }
+  /* 12px */
+}
 
 h6, .h6 {
   font-family: "helvetica", sans-serif;
@@ -223,7 +257,8 @@ h6, .h6 {
   /* 14px */
   line-height: 1.2;
   margin-top: .857142857em;
-  /* 12px */ }
+  /* 12px */
+}
 
 /**
  * Paragraph styles
@@ -235,26 +270,32 @@ p, .para {
   line-height: 1.785714286em;
   /* 25px */
   margin-top: .857142857em;
-  /* 12px */ }
+  /* 12px */
+}
 
 .medium {
   font-size: .875em;
-  /* 14px */ }
+  /* 14px */
+}
 
 .intro {
   font-size: 1.125em;
-  /* 18px */ }
+  /* 18px */
+}
 
 .small {
   font-size: .8125em;
-  /* 14px */ }
+  /* 14px */
+}
 
 .tiny {
   font-size: .75em;
-  /* 12px */ }
+  /* 12px */
+}
 
 .weak {
-  font-weight: normal; }
+  font-weight: normal;
+}
 
 /**
  * Typographic relationships (nawww, aren't they so good together?)
@@ -264,21 +305,25 @@ h4 + h6,
 h4 + p,
 h5 + p {
   margin-top: .285714286em;
-  /* 4px @ 14px */ }
+  /* 4px @ 14px */
+}
 
 p + p {
   margin-top: .571428571em;
-  /* 8px @ 14px */ }
+  /* 8px @ 14px */
+}
 
 /**
  * Typography helpers
  * ----------------------------------------------------------------------------
  */
 .sans {
-  font-family: "helvetica", sans-serif; }
+  font-family: "helvetica", sans-serif;
+}
 
 .serif {
-  font-family: "georgia", serif; }
+  font-family: "georgia", serif;
+}
 
 /**
  * Links
@@ -291,54 +336,68 @@ p + p {
 .list--unstyled, .list--inline {
   list-style: none;
   padding-left: 0;
-  margin: 0; }
+  margin: 0;
+}
 
 .list--unstyled > li, .list--inline > li {
   list-style: none;
-  margin-left: 0; }
+  margin-left: 0;
+}
 
 /**
  * Generic blocks
  * ----------------------------------------------------------------------------
  <div class='block block--bleed block--mobile'>
-  Some content.
+	Some content.
  </div>
  */
 .block {
   margin-top: 1.5em;
-  padding: 1.5em 3em; }
+  padding: 1.5em 3em;
+}
 
 .block > :first-child {
-  margin-top: 0; }
+  margin-top: 0;
+}
 
 .block--xl {
-  padding: 2.25em 4.5em; }
+  padding: 2.25em 4.5em;
+}
 
 .block--xxl {
-  padding: 3em 6em; }
+  padding: 3em 6em;
+}
 
 .block--xxxl {
-  padding: 3.75em 7.5em; }
+  padding: 3.75em 7.5em;
+}
 
 .block--xs {
-  padding: 1em 0.75em; }
+  padding: 1em 0.75em;
+}
 
 .block--xxs {
-  padding: 0.75em 0.375em; }
+  padding: 0.75em 0.375em;
+}
 
 .block--tight {
   padding-top: 0.75em;
-  padding-bottom: 0.75em; }
+  padding-bottom: 0.75em;
+}
 
 .block--bleed {
-  padding: 0; }
+  padding: 0;
+}
 
 .block--bleed__padding {
-  padding: 1.5em 3em; }
+  padding: 1.5em 3em;
+}
 
 @media only screen and (max-width: 30em) {
   .block--mobile {
-    padding: 1em; } }
+    padding: 1em;
+  }
+}
 
 /**
  * CSS Arrows
@@ -355,16 +414,20 @@ p + p {
  </div>
  */
 .media {
-  margin-top: 1.5em; }
+  margin-top: 1.5em;
+}
 
 .media__image {
-  float: left; }
+  float: left;
+}
 
 .media--rev {
-  margin-top: 1.5em; }
+  margin-top: 1.5em;
+}
 
 .media--rev > .media__image {
-  float: right; }
+  float: right;
+}
 
 /**
  * Clearfix
@@ -382,14 +445,17 @@ p + p {
    * For IE 6/7 only
    * Include this rule to trigger hasLayout and contain floats.
    */
-  *zoom: 1; }
-  .clearfix:before, .list--inline:before, .media:before, .media--rev:before, .clearfix:after, .list--inline:after, .media:after, .media--rev:after, .cf:before, .cf:after {
-    content: " ";
-    /* 1 */
-    display: table;
-    /* 2 */ }
-  .clearfix:after, .list--inline:after, .media:after, .media--rev:after, .cf:after {
-    clear: both; }
+  *zoom: 1;
+}
+.clearfix:before, .list--inline:before, .media:before, .media--rev:before, .clearfix:after, .list--inline:after, .media:after, .media--rev:after, .cf:before, .cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.clearfix:after, .list--inline:after, .media:after, .media--rev:after, .cf:after {
+  clear: both;
+}
 
 /**
  * Inline block grid
@@ -406,60 +472,77 @@ p + p {
   font-size: 0;
   /* [2] */
   text-justify: distribute-all-lines;
-  /* [3] */ }
+  /* [3] */
+}
 
 .grid__item, .grid > * {
   font-size: medium;
   text-align: left;
-  vertical-align: top; }
+  vertical-align: top;
+}
 
 .grid:after,
 .grid__break {
   content: '';
-  height: 0; }
+  height: 0;
+}
 
 /**
  * Vertical align these grid items in the middle!
  */
 .grid--middle > .grid__item, .grid.grid--middle > * {
-  vertical-align: middle; }
+  vertical-align: middle;
+}
 
 .g--1-1 {
-  width: 100%; }
+  width: 100%;
+}
 
 .g--1-2 {
-  width: 50%; }
+  width: 50%;
+}
 
 .g--1-4 {
-  width: 25%; }
+  width: 25%;
+}
 
 .g--3-4 {
-  width: 75%; }
+  width: 75%;
+}
 
 .g--9-10 {
-  width: 80%; }
+  width: 80%;
+}
 
 .g--1-10 {
-  width: 20%; }
+  width: 20%;
+}
 
 @media only screen and (max-width: 30em) {
   .g-m--1-1 {
-    width: 100%; }
+    width: 100%;
+  }
 
   .g-m--1-2 {
-    width: 50%; }
+    width: 50%;
+  }
 
   .g-m--9-10 {
-    width: 90%; }
+    width: 90%;
+  }
 
   .g-m--1-10 {
-    width: 10%; }
+    width: 10%;
+  }
 
   .g-m--8-10 {
-    width: 80%; }
+    width: 80%;
+  }
 
   .g-m--2-10 {
-    width: 20%; } }
+    width: 20%;
+  }
+}
 /**
  * Icons
  * -----------------------------------------------------------------------------
@@ -470,7 +553,8 @@ p + p {
  */
 .i {
   vertical-align: middle;
-  font-style: normal; }
+  font-style: normal;
+}
 
 /**
  * Icon adjacent to a block of text
@@ -482,14 +566,17 @@ p + p {
  </a>
  */
 .icon-text {
-  vertical-align: middle; }
+  vertical-align: middle;
+}
 
 .icon-text > .i {
   vertical-align: middle;
-  margin-right: 0.375em; }
+  margin-right: 0.375em;
+}
 
 .icon-text > .icon-text__label {
-  vertical-align: middle; }
+  vertical-align: middle;
+}
 
 /**
  * Buttons
@@ -536,12 +623,15 @@ p + p {
   -moz-border-radius: 0.375em;
   -ms-border-radius: 0.375em;
   -o-border-radius: 0.375em;
-  border-radius: 0.375em; }
-  .btn, .btn:hover {
-    text-decoration: none;
-    /* [9] */ }
-  .btn:active, .btn:focus {
-    outline: none; }
+  border-radius: 0.375em;
+}
+.btn, .btn:hover {
+  text-decoration: none;
+  /* [9] */
+}
+.btn:active, .btn:focus {
+  outline: none;
+}
 
 /**
  * Button modifiers
@@ -559,21 +649,25 @@ p + p {
 .btn--icon-large,
 .btn--icon-large--rev,
 .btn--icon-only--large {
-  line-height: 3.5; }
+  line-height: 3.5;
+}
 
 .btn--large {
   padding-right: 3em;
-  padding-left: 3em; }
+  padding-left: 3em;
+}
 
 .btn--small,
 .btn--icon-small,
 .btn--icon-small--rev,
 .btn--icon-only--small {
-  line-height: 2; }
+  line-height: 2;
+}
 
 .btn--small {
   padding-right: 0.75em;
-  padding-left: 0.75em; }
+  padding-left: 0.75em;
+}
 
 /**
  * Pill type buttons with (rounded) ends
@@ -584,21 +678,24 @@ p + p {
   -moz-border-radius: 200px;
   -ms-border-radius: 200px;
   -o-border-radius: 200px;
-  border-radius: 200px; }
+  border-radius: 200px;
+}
 
 .btn--hard {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
   -o-border-radius: 0;
-  border-radius: 0; }
+  border-radius: 0;
+}
 
 /**
  * Block buttons stretch to the full width of their parent (handy!)
  */
 .btn--block {
   display: block;
-  text-align: center; }
+  text-align: center;
+}
 
 /**
  * Make a button behave like a block at mobile only (also handy)
@@ -606,7 +703,9 @@ p + p {
 @media only screen and (max-width: 37.5em) {
   .btn--block-mobile {
     text-align: center;
-    display: block; } }
+    display: block;
+  }
+}
 /**
  * Submit buttons
  * ----------------------------------------------------------------------------
@@ -616,17 +715,20 @@ p + p {
 .btn--submit {
   line-height: 1;
   padding-top: 0.75em;
-  padding-bottom: 0.75em; }
+  padding-bottom: 0.75em;
+}
 
 .btn--submit-large {
   line-height: 1;
   padding-top: 1.5em;
-  padding-bottom: 1.5em; }
+  padding-bottom: 1.5em;
+}
 
 .btn--submit-small {
   line-height: 1;
   padding-top: 0.375em;
-  padding-bottom: 0.375em; }
+  padding-bottom: 0.375em;
+}
 
 /**
  * Buttons with icons
@@ -646,53 +748,69 @@ p + p {
 .btn--icon-only--small,
 .btn--icon-only--large {
   text-align: center;
-  min-width: 1em; }
+  min-width: 1em;
+}
 
 .btn--icon-only {
   padding-left: 0.9375em;
-  padding-right: 0.9375em; }
+  padding-right: 0.9375em;
+}
 
 .btn--icon-only--small {
   padding-left: 0.6em;
-  padding-right: 0.6em; }
+  padding-right: 0.6em;
+}
 
 .btn--icon-only--large {
   padding-left: 1.66667em;
-  padding-right: 1.66667em; }
+  padding-right: 1.66667em;
+}
 
 .btn--icon {
-  padding-left: 0.75em; }
-  .btn--icon > .i {
-    margin-right: 0.75em; }
+  padding-left: 0.75em;
+}
+.btn--icon > .i {
+  margin-right: 0.75em;
+}
 
 .btn--icon--rev {
-  padding-right: 0.75em; }
-  .btn--icon--rev > .i {
-    margin-left: 0.75em; }
+  padding-right: 0.75em;
+}
+.btn--icon--rev > .i {
+  margin-left: 0.75em;
+}
 
 .btn--icon-large {
   padding-left: 1.5em;
-  padding-right: 3em; }
-  .btn--icon-large > .i {
-    margin-right: 0.75em; }
+  padding-right: 3em;
+}
+.btn--icon-large > .i {
+  margin-right: 0.75em;
+}
 
 .btn--icon-large--rev {
   padding-left: 3em;
-  padding-right: 1.5em; }
-  .btn--icon-large--rev > .i {
-    margin-left: 0.75em; }
+  padding-right: 1.5em;
+}
+.btn--icon-large--rev > .i {
+  margin-left: 0.75em;
+}
 
 .btn--icon-small {
   padding-left: 0.5em;
-  padding-right: 0.75em; }
-  .btn--icon-small > .i {
-    margin-right: 0.375em; }
+  padding-right: 0.75em;
+}
+.btn--icon-small > .i {
+  margin-right: 0.375em;
+}
 
 .btn--icon-small--rev {
   padding-left: 0.75em;
-  padding-right: 0.375em; }
-  .btn--icon-small--rev > .i {
-    margin-left: 0.75em; }
+  padding-right: 0.375em;
+}
+.btn--icon-small--rev > .i {
+  margin-left: 0.75em;
+}
 
 /**
  * Button types
@@ -706,45 +824,57 @@ p + p {
 .btn-secondary:hover,
 .btn-positive:hover,
 .btn-negative:hover {
-  color: #fff; }
+  color: #fff;
+}
 
 .btn-primary {
   background-color: #3CBE8A;
-  color: #fff; }
-  .btn-primary:hover {
-    background-color: #33a376; }
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: #33a376;
+}
 
 .btn-secondary {
   background-color: #999;
-  color: #fff; }
-  .btn-secondary:hover {
-    background-color: #777; }
+  color: #fff;
+}
+.btn-secondary:hover {
+  background-color: #777;
+}
 
 .btn-tertiary {
   background-color: #ddd;
-  color: #444; }
-  .btn-tertiary:hover {
-    background-color: #ccc;
-    color: #333; }
+  color: #444;
+}
+.btn-tertiary:hover {
+  background-color: #ccc;
+  color: #333;
+}
 
 .btn-positive {
   background-color: #3977B1;
-  color: #fff; }
-  .btn-positive:hover {
-    background-color: #306596; }
+  color: #fff;
+}
+.btn-positive:hover {
+  background-color: #306596;
+}
 
 .btn-negative {
   background-color: #eb3930;
-  color: #fff; }
-  .btn-negative:hover {
-    background-color: #d8281f; }
+  color: #fff;
+}
+.btn-negative:hover {
+  background-color: #d8281f;
+}
 
 /**
  * A common active state makes us look pro as, bro!
  */
 .btn:active {
   background-color: #333;
-  color: #fff; }
+  color: #fff;
+}
 
 /**
  * ----------------------------------------------------------------------------
@@ -762,13 +892,16 @@ p + p {
   -moz-transition: bottom 100ms ease-out;
   -ms-transition: bottom 100ms ease-out;
   -o-transition: bottom 100ms ease-out;
-  transition: bottom 100ms ease-out; }
+  transition: bottom 100ms ease-out;
+}
 
 .btn--bounce:active {
-  bottom: -2px; }
+  bottom: -2px;
+}
 
 .btn--bob:active {
-  bottom: -1px; }
+  bottom: -1px;
+}
 
 /**
  * Bounce the icon to a side
@@ -787,7 +920,8 @@ p + p {
   -moz-transition-duration: 300ms;
   -ms-transition-duration: 300ms;
   -o-transition-duration: 300ms;
-  transition-duration: 300ms; }
+  transition-duration: 300ms;
+}
 
 .btn--bounce-icon--right:hover .i {
   -webkit-transition-property: left;
@@ -795,7 +929,8 @@ p + p {
   -ms-transition-property: left;
   -o-transition-property: left;
   transition-property: left;
-  left: .3125em; }
+  left: .3125em;
+}
 
 .btn--bounce-icon--left:hover .i {
   -webkit-transition-property: right;
@@ -803,7 +938,8 @@ p + p {
   -ms-transition-property: right;
   -o-transition-property: right;
   transition-property: right;
-  right: .3125em; }
+  right: .3125em;
+}
 
 .btn--bounce-icon--bottom:hover .i {
   -webkit-transition-property: top;
@@ -811,7 +947,8 @@ p + p {
   -ms-transition-property: top;
   -o-transition-property: top;
   transition-property: top;
-  top: .3125em; }
+  top: .3125em;
+}
 
 .btn--bounce-icon--top:hover .i {
   -webkit-transition-property: bottom;
@@ -819,14 +956,16 @@ p + p {
   -ms-transition-property: bottom;
   -o-transition-property: bottom;
   transition-property: bottom;
-  bottom: .3125em; }
+  bottom: .3125em;
+}
 
 /**
  * Inset buttons on block level elements
  * ----------------------------------------------------------------------------
  */
 .btn--inset {
-  position: relative; }
+  position: relative;
+}
 
 .btn--inset:after {
   position: absolute;
@@ -844,23 +983,29 @@ p + p {
   display: block;
   border-width: 0;
   border-color: inherit;
-  border-style: solid; }
+  border-style: solid;
+}
 
 .btn--inset:hover:after {
   border-width: 4px;
-  visibility: visible; }
+  visibility: visible;
+}
 
 .btn--inset-primary:after {
-  border-color: #3977B1; }
+  border-color: #3977B1;
+}
 
 .btn--inset-secondary:after {
-  border-color: #eb3930; }
+  border-color: #eb3930;
+}
 
 .btn--inset-large:hover:after {
-  border-width: 8px; }
+  border-width: 8px;
+}
 
 .btn--inset-small:hover:after {
-  border-width: 1px; }
+  border-width: 1px;
+}
 
 /**
  * Buttons that show a loading indicator when clicked
@@ -868,11 +1013,13 @@ p + p {
  */
 .btn--spinner {
   position: relative;
-  cursor: default; }
+  cursor: default;
+}
 
 .btn--spinner .btn--label {
   opacity: 0;
-  visibility: hidden; }
+  visibility: hidden;
+}
 
 .btn--spinner:after {
   position: absolute;
@@ -883,10 +1030,12 @@ p + p {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  width: 100%; }
+  width: 100%;
+}
 
 .btn--spinner--text:after {
-  content: attr(data-btn-loading-indicator); }
+  content: attr(data-btn-loading-indicator);
+}
 
 /**
  * Fancy select boxes
@@ -904,14 +1053,17 @@ p + p {
     </div>
  */
 .field_select {
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .field_select:hover .field_select__value {
   background-color: #eee;
-  border-bottom-color: #ddd; }
+  border-bottom-color: #ddd;
+}
 
 .field_select__input {
-  width: 100%; }
+  width: 100%;
+}
 
 .js .field_select__input {
   top: 0;
@@ -921,33 +1073,41 @@ p + p {
   height: 100%;
   opacity: 0;
   filter: alpha(opacity=0);
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   -webkit-appearance: menulist-button;
   display: block;
   z-index: 2;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .field_select__affordance,
 .field_select__affordance--mobile {
   right: .5em;
   top: 50%;
   margin-top: -.5em;
-  line-height: 1; }
+  line-height: 1;
+}
 
 @media only screen and (max-width: 30em) {
   .field_select__affordance {
-    display: none; } }
+    display: none;
+  }
+}
 
 .field_select__affordance--mobile {
-  display: none; }
-  @media only screen and (max-width: 30em) {
-    .field_select__affordance--mobile {
-      display: block; } }
+  display: none;
+}
+@media only screen and (max-width: 30em) {
+  .field_select__affordance--mobile {
+    display: block;
+  }
+}
 
 .no-js .field_select__value,
 .no-js .field_select__affordance,
 .no-js .field_select_affordance--mobile {
-  display: none; }
+  display: none;
+}
 
 /**
  * Fancy checkboxes
@@ -962,28 +1122,34 @@ p + p {
     </div>
  */
 .field_checkbox {
-  line-height: 1; }
-  .field_checkbox > input {
-    margin: 0; }
-  .js .field_checkbox > input {
-    top: 0;
-    left: 0;
-    /**
-     * IE8 refuses to fire events on a hidden checkbox. Use opacity instead
-     */
-    opacity: 0;
-    filter: alpha(opacity=0);
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; }
+  line-height: 1;
+}
+.field_checkbox > input {
+  margin: 0;
+}
+.js .field_checkbox > input {
+  top: 0;
+  left: 0;
+  /**
+   * IE8 refuses to fire events on a hidden checkbox. Use opacity instead
+   */
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
 
 .field_checkbox__fancy {
   display: inline-block;
   vertical-align: middle;
   z-index: 1;
   top: 0;
-  left: 0; }
-  .no-js .field_checkbox__fancy {
-    display: none; }
+  left: 0;
+}
+.no-js .field_checkbox__fancy {
+  display: none;
+}
 
 .field_checkbox,
 .field_checkbox__label {
-  cursor: pointer; }
+  cursor: pointer;
+}
