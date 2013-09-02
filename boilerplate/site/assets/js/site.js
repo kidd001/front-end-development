@@ -1,3 +1,6 @@
+// Fix the console in IE8.
+if (typeof console === 'undefined') {console={}; console.log = function(){};}
+
 /**
  * Site JavaScript template.
  * ------------------------------------------------------------------------
