@@ -501,6 +501,7 @@ a {
         @extend .inline-block;
         content: '';
         height: 0;
+        width: 100%;
     }
 /**
  * Vertical align these grid items in the middle!
