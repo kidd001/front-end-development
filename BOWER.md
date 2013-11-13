@@ -22,7 +22,11 @@ Available at http://bower.io/
 
 Bower lets you install front-end dependencies via a git endpoint. So you can do this: 
 
-`bower init` (in your project root) 
+`bower init` (in your project root).
+
+This lets you store the dependencies for your project in bower.json.
+It's not 100% needed to simply install a package, but it is helpful.
+
 
 And then: 
  
@@ -36,6 +40,22 @@ And you'll magically have the latest stable versions from github in your project
 They'll be copied to the bower_packages directory. You can add a grunt task to copy the
 files out to the right place in your project, using this:
 https://github.com/yatskevich/grunt-bower-task
+
+If you have a `bower.json` file in your directory, you can add `-S` to save the package as a dependency: 
+
+```
+bower install teflon.js -S
+```
+
+Will add the following to `bower.json`: 
+
+```javascript
+"dependencies": {
+ "teflon.js":"0.1.0"
+}
+```
+
+Neat!
 
 
 ## What about updating?
